@@ -14,10 +14,10 @@
 - GDScript
 
 ## Gameplay
-(Add a GIF or screenshot here later)
+![Gameplay](media/mocktalegif.gif)
 
 ## Play the Game
-(Add your itch.io or website link here)
+https://solossbu.itch.io/mocktale
 
 ## Code Overview
 The project is structured into modular systems:
