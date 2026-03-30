@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://cj4a68rmwqag"]
+
+[ext_resource type="Script" uid="uid://dx1jh37t2p1dy" path="res://scripts/main.gd" id="1_23xot"]
+[ext_resource type="PackedScene" uid="uid://d7tlfnku8aex" path="res://scenes/pause_menu.tscn" id="2_xtwoi"]
+[ext_resource type="Script" uid="uid://wm34q1ily4a0" path="res://scripts/camera.gd" id="3_dnhvd"]
+[ext_resource type="Script" uid="uid://dxdeesvlfutgh" path="res://scripts/touch_buttons.gd" id="4_78gyg"]
+
+[node name="Main" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_23xot")
+
+[node name="LevelContainer" type="Node" parent="."]
+process_mode = 1
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_xtwoi")]
+
+[node name="CameraHolder" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="CameraHolder" groups=["room_camera"]]
+process_mode = 3
+zoom = Vector2(0.5, 0.5)
+process_callback = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+script = ExtResource("3_dnhvd")
+pan_time = 0.5
+
+[node name="Touch Buttons" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("4_78gyg")
+
+[node name="Up" type="Button" parent="Touch Buttons"]
+offset_left = 247.0
+offset_top = 143.0
+offset_right = 268.0
+offset_bottom = 161.0
+
+[node name="Down" type="Button" parent="Touch Buttons"]
+offset_left = 247.0
+offset_top = 162.0
+offset_right = 268.0
+offset_bottom = 180.0
+
+[node name="Left" type="Button" parent="Touch Buttons"]
+offset_left = 224.0
+offset_top = 162.0
+offset_right = 245.0
+offset_bottom = 180.0
+
+[node name="Right" type="Button" parent="Touch Buttons"]
+offset_left = 269.0
+offset_top = 162.0
+offset_right = 293.0
+offset_bottom = 180.0
+
+[node name="Space" type="Button" parent="Touch Buttons"]
+offset_left = 97.0
+offset_top = 163.0
+offset_right = 219.0
+offset_bottom = 180.0
+
+[node name="Shift" type="Button" parent="Touch Buttons"]
+offset_left = 51.0
+offset_top = 147.0
+offset_right = 84.0
+offset_bottom = 166.0
+
+[connection signal="button_down" from="Touch Buttons/Up" to="Touch Buttons" method="_on_up_button_down"]
+[connection signal="button_up" from="Touch Buttons/Up" to="Touch Buttons" method="_on_up_button_up"]
+[connection signal="button_down" from="Touch Buttons/Down" to="Touch Buttons" method="_on_down_button_down"]
+[connection signal="button_up" from="Touch Buttons/Down" to="Touch Buttons" method="_on_down_button_up"]
+[connection signal="button_down" from="Touch Buttons/Left" to="Touch Buttons" method="_on_left_button_down"]
+[connection signal="button_up" from="Touch Buttons/Left" to="Touch Buttons" method="_on_left_button_up"]
+[connection signal="button_down" from="Touch Buttons/Right" to="Touch Buttons" method="_on_right_button_down"]
+[connection signal="button_up" from="Touch Buttons/Right" to="Touch Buttons" method="_on_right_button_up"]
+[connection signal="button_down" from="Touch Buttons/Space" to="Touch Buttons" method="_on_space_button_down"]
+[connection signal="button_up" from="Touch Buttons/Space" to="Touch Buttons" method="_on_space_button_up"]
+[connection signal="button_down" from="Touch Buttons/Shift" to="Touch Buttons" method="_on_shift_button_down"]
+[connection signal="button_up" from="Touch Buttons/Shift" to="Touch Buttons" method="_on_shift_button_up"]

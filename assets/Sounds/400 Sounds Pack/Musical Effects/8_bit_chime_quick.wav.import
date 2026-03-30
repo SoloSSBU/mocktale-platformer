@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cu0oxx66fypg5"
+path="res://.godot/imported/8_bit_chime_quick.wav-4ebf2896e086735566b7ec805044a59e.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/400 Sounds Pack/Musical Effects/8_bit_chime_quick.wav"
+dest_files=["res://.godot/imported/8_bit_chime_quick.wav-4ebf2896e086735566b7ec805044a59e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://dd5r4dfq147vx"]
+
+[ext_resource type="Texture2D" uid="uid://blfwgpg56224j" path="res://assets/Cave/decor/mine decor/string lights.png" id="1_wvbvl"]
+
+[sub_resource type="Gradient" id="Gradient_s57vn"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.24590164, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y0t42"]
+gradient = SubResource("Gradient_s57vn")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.4871795, 0)
+
+[sub_resource type="Gradient" id="Gradient_aeluj"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.24180327, 0.4057377)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nh44b"]
+gradient = SubResource("Gradient_aeluj")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="StringLight" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+light_mask = 3
+z_index = -1
+texture = ExtResource("1_wvbvl")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(6, -4)
+scale = Vector2(1.5, 1.5)
+energy = 0.7
+blend_mode = 2
+texture = SubResource("GradientTexture2D_y0t42")
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(6, -4)
+scale = Vector2(2, 2)
+energy = 0.5
+blend_mode = 2
+range_item_cull_mask = 30
+shadow_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_nh44b")

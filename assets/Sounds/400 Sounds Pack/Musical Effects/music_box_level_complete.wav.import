@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cg6je3grkfvmo"
+path="res://.godot/imported/music_box_level_complete.wav-1537e1283354512bb2e3712776b7896c.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/400 Sounds Pack/Musical Effects/music_box_level_complete.wav"
+dest_files=["res://.godot/imported/music_box_level_complete.wav-1537e1283354512bb2e3712776b7896c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

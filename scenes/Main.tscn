@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=3 uid="uid://bi5iitgon0uqd"]
+
+[ext_resource type="Script" uid="uid://dx1jh37t2p1dy" path="res://scripts/main.gd" id="1_glv2v"]
+[ext_resource type="PackedScene" uid="uid://d7tlfnku8aex" path="res://scenes/pause_menu.tscn" id="2_uu6xs"]
+[ext_resource type="Script" uid="uid://wm34q1ily4a0" path="res://scripts/camera.gd" id="3_r0du0"]
+[ext_resource type="Script" uid="uid://dxdeesvlfutgh" path="res://scripts/touch_buttons.gd" id="4_cm0pq"]
+[ext_resource type="Script" uid="uid://bh1hwxu2a5iqp" path="res://addons/virtual_joystick_plus/virtual_joystick_plus.gd" id="5_lgr22"]
+[ext_resource type="Texture2D" uid="uid://b6a3u3hg6hyo5" path="res://addons/virtual_joystick_plus/resources/textures/joystick_texture_5.png" id="6_trn2v"]
+[ext_resource type="Texture2D" uid="uid://5mnbph5si0jv" path="res://addons/virtual_joystick_plus/resources/textures/stick_texture_5.png" id="7_03owx"]
+
+[sub_resource type="Gradient" id="Gradient_lgr22"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0.8039216)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_trn2v"]
+gradient = SubResource("Gradient_lgr22")
+width = 1
+
+[node name="Main" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_glv2v")
+
+[node name="LevelContainer" type="Node" parent="."]
+process_mode = 1
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_uu6xs")]
+
+[node name="CameraHolder" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="CameraHolder" groups=["room_camera"]]
+process_mode = 3
+position = Vector2(320, -180)
+zoom = Vector2(0.5, 0.5)
+process_callback = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+script = ExtResource("3_r0du0")
+pan_time = 0.5
+
+[node name="Spawn" type="Marker2D" parent="CameraHolder/Camera2D" groups=["spawn"]]
+
+[node name="TouchButtons" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+script = ExtResource("4_cm0pq")
+
+[node name="Escape" type="TouchScreenButton" parent="TouchButtons"]
+modulate = Color(1, 1, 1, 0.57254905)
+position = Vector2(6, 1)
+scale = Vector2(25, 17)
+texture_normal = SubResource("GradientTexture1D_trn2v")
+
+[node name="Climb" type="TouchScreenButton" parent="TouchButtons"]
+modulate = Color(1, 1, 1, 0.57254905)
+position = Vector2(1, 86)
+scale = Vector2(51.999996, 46.999992)
+texture_normal = SubResource("GradientTexture1D_trn2v")
+
+[node name="Shift" type="TouchScreenButton" parent="TouchButtons"]
+modulate = Color(1, 1, 1, 0.57254905)
+position = Vector2(0.99999994, 136)
+scale = Vector2(52, 44)
+texture_normal = SubResource("GradientTexture1D_trn2v")
+
+[node name="Space" type="TouchScreenButton" parent="TouchButtons"]
+modulate = Color(1, 1, 1, 0.57254905)
+position = Vector2(56.999996, 136)
+scale = Vector2(55.999996, 43)
+texture_normal = SubResource("GradientTexture1D_trn2v")
+
+[node name="VirtualJoystickPlus" type="Control" parent="TouchButtons"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 89.0
+offset_top = -74.0
+offset_right = 389.0
+offset_bottom = 254.47107
+scale = Vector2(0.55, 0.55)
+pivot_offset = Vector2(150, 164.23553)
+script = ExtResource("5_lgr22")
+joystick_mode = 1
+scale_factor = 0.30000000000000004
+joystick_texture = ExtResource("6_trn2v")
+stick_texture = ExtResource("7_03owx")
+metadata/_custom_type_script = "uid://bh1hwxu2a5iqp"
+
+[connection signal="pressed" from="TouchButtons/Escape" to="TouchButtons" method="_on_escape_pressed"]
+[connection signal="released" from="TouchButtons/Escape" to="TouchButtons" method="_on_escape_released"]
+[connection signal="pressed" from="TouchButtons/Climb" to="TouchButtons" method="_on_climb_pressed"]
+[connection signal="released" from="TouchButtons/Climb" to="TouchButtons" method="_on_climb_released"]
+[connection signal="pressed" from="TouchButtons/Shift" to="TouchButtons" method="_on_shift_pressed"]
+[connection signal="released" from="TouchButtons/Shift" to="TouchButtons" method="_on_shift_released"]
+[connection signal="pressed" from="TouchButtons/Space" to="TouchButtons" method="_on_space_pressed"]
+[connection signal="released" from="TouchButtons/Space" to="TouchButtons" method="_on_space_released"]
+[connection signal="analogic_changed" from="TouchButtons/VirtualJoystickPlus" to="TouchButtons" method="_on_virtual_joystick_plus_analogic_changed"]

@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://78sg5yt810wr"]
+
+[ext_resource type="Texture2D" uid="uid://st66clg0rusn" path="res://assets/Cave/conveyor belt animated.png" id="1_n0ytx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd3gx"]
+atlas = ExtResource("1_n0ytx")
+region = Rect2(0, 0, 96, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5f2b"]
+atlas = ExtResource("1_n0ytx")
+region = Rect2(96, 0, 96, 95)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk4mr"]
+atlas = ExtResource("1_n0ytx")
+region = Rect2(192, 0, 96, 95)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hwfvm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bd3gx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5f2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk4mr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n0ytx"]
+radius = 7.075556
+height = 110.34639
+
+[node name="Conveyer" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -47.5)
+sprite_frames = SubResource("SpriteFrames_hwfvm")
+autoplay = "default"
+frame_progress = 0.8874166
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -37.000004)
+rotation = -2.349025
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_n0ytx")

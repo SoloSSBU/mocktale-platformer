@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://jtl5rt470dxa"]
+
+[ext_resource type="Script" uid="uid://cuuw10idebhtg" path="res://scripts/after_image_spawner.gd" id="1_l6y1l"]
+[ext_resource type="PackedScene" uid="uid://dv3y1ny7wq6de" path="res://scenes/after_image.tscn" id="2_cqvgo"]
+
+[node name="AfterImageSpawner" type="Node2D"]
+script = ExtResource("1_l6y1l")
+afterimage_scene = ExtResource("2_cqvgo")

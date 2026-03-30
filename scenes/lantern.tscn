@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://b1gm0ojbm661r"]
+
+[ext_resource type="Script" uid="uid://dbshhtv2kgh2s" path="res://scripts/lantern.gd" id="1_aeluj"]
+[ext_resource type="Texture2D" uid="uid://d2xhgwj8rss2i" path="res://assets/Cave/lantern.png" id="1_kxgpu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aeluj"]
+atlas = ExtResource("1_kxgpu")
+region = Rect2(0, 0, 7, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s57vn"]
+atlas = ExtResource("1_kxgpu")
+region = Rect2(7, 0, 7, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7vr3"]
+atlas = ExtResource("1_kxgpu")
+region = Rect2(14, 0, 7, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u7me"]
+atlas = ExtResource("1_kxgpu")
+region = Rect2(21, 0, 7, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qo3q8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aeluj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s57vn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7vr3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8u7me")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_s57vn"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.24590164, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y7vr3"]
+gradient = SubResource("Gradient_s57vn")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.4871795, 0)
+
+[sub_resource type="Gradient" id="Gradient_aeluj"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.24180327, 0.4057377)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s57vn"]
+gradient = SubResource("Gradient_aeluj")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Lantern" type="Node2D"]
+script = ExtResource("1_aeluj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qo3q8")
+autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1, 10)
+blend_mode = 2
+texture = SubResource("GradientTexture2D_y7vr3")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(1, 12)
+scale = Vector2(2, 2)
+energy = 0.1
+range_item_cull_mask = 30
+shadow_item_cull_mask = 2
+texture = SubResource("GradientTexture2D_s57vn")

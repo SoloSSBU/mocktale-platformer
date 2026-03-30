@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b8uxvgrkumx7n"
+path="res://.godot/imported/man_9.wav-5a16dde35243f4917f50429321bcb711.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/400 Sounds Pack/Human/man_9.wav"
+dest_files=["res://.godot/imported/man_9.wav-5a16dde35243f4917f50429321bcb711.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

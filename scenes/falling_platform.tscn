@@ -1,0 +1,109 @@
+[gd_scene load_steps=11 format=3 uid="uid://d2eodhba0vamu"]
+
+[ext_resource type="Script" uid="uid://dxs30uisnmiim" path="res://scripts/falling_platform.gd" id="1_3bb5w"]
+[ext_resource type="Texture2D" uid="uid://bjahh35wv0k74" path="res://assets/Cave/trippingfallingstumblin.png" id="2_5yqql"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi328"]
+atlas = ExtResource("2_5yqql")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xg6p"]
+atlas = ExtResource("2_5yqql")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8i4n"]
+atlas = ExtResource("2_5yqql")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8obj2"]
+atlas = ExtResource("2_5yqql")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3r43t"]
+atlas = ExtResource("2_5yqql")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_123xr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi328")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xg6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8i4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8obj2")
+}],
+"loop": true,
+"name": &"falling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3r43t")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_057sx"]
+size = Vector2(64, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85fil"]
+size = Vector2(64, 1)
+
+[node name="Falling_Platform" type="StaticBody2D"]
+modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+light_mask = 2
+z_index = -1
+collision_layer = 9
+collision_mask = 9
+script = ExtResource("1_3bb5w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+sprite_frames = SubResource("SpriteFrames_123xr")
+animation = &"falling"
+autoplay = "idle"
+frame_progress = 0.92261106
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25.5)
+shape = SubResource("RectangleShape2D_057sx")
+one_way_collision = true
+
+[node name="TopDetector" type="Area2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopDetector"]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_85fil")
+
+[node name="Flash" type="ColorRect" parent="."]
+visible = false
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = -19.0
+
+[node name="Puff" type="CPUParticles2D" parent="."]
+position = Vector2(0, -24)
+emitting = false
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(32, 1)
+direction = Vector2(0, 1)
+spread = 120.0
+gravity = Vector2(0, 200)
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+damping_min = 0.205
+damping_max = 0.9
+color = Color(0.3553136, 0.35531354, 0.35531357, 1)

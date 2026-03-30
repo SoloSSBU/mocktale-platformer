@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1g0x8naalbep"]
+
+[ext_resource type="Texture2D" uid="uid://ce6cmwldv8cnt" path="res://assets/Characters/dashmock .png" id="1_unliu"]
+[ext_resource type="Script" uid="uid://djniea1kmjwuy" path="res://scripts/animated_sprite_2d.gd" id="2_c5et3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5et3"]
+atlas = ExtResource("1_unliu")
+region = Rect2(732, 183, 183, 183)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h1as8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5et3")
+}],
+"loop": false,
+"name": &"dash_wind",
+"speed": 10.0
+}]
+
+[node name="dash_wind_root" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h1as8")
+animation = &"dash_wind"
+autoplay = "dash_wind"
+script = ExtResource("2_c5et3")

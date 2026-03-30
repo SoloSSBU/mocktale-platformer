@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bijwk2u7aodky"
+path="res://.godot/imported/harpsichord_level_start.wav-15ba62a9b59961cad1a5c2a732fd6014.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/400 Sounds Pack/Musical Effects/harpsichord_level_start.wav"
+dest_files=["res://.godot/imported/harpsichord_level_start.wav-15ba62a9b59961cad1a5c2a732fd6014.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

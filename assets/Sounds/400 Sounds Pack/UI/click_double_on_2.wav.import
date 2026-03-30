@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dtui2kfa6gj3f"
+path="res://.godot/imported/click_double_on_2.wav-a308c8670e0bccf672f8c7cbaadaa31c.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/400 Sounds Pack/UI/click_double_on_2.wav"
+dest_files=["res://.godot/imported/click_double_on_2.wav-a308c8670e0bccf672f8c7cbaadaa31c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

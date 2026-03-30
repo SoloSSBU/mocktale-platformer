@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dvu774sih2oxg"
+path="res://.godot/imported/elastic_twang.wav-c349bcef6e7a7e8f2b3d52fd9e3f14d2.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/400 Sounds Pack/Other/elastic_twang.wav"
+dest_files=["res://.godot/imported/elastic_twang.wav-c349bcef6e7a7e8f2b3d52fd9e3f14d2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

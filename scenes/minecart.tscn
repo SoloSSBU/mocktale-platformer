@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://blbnbky8p6581"]
+
+[ext_resource type="Script" uid="uid://c1rokwcti6cwf" path="res://scripts/minecart.gd" id="1_4ni4e"]
+[ext_resource type="Texture2D" uid="uid://cwbuhjdoduafy" path="res://assets/Cave/minecart.png" id="1_jh0t6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2n3d"]
+size = Vector2(36, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ni4e"]
+size = Vector2(38, 24)
+
+[node name="Minecart" type="CharacterBody2D"]
+z_index = -1
+collision_layer = 2
+collision_mask = 6
+script = ExtResource("1_4ni4e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = ExtResource("1_jh0t6")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-7.87, -9)
+scale = Vector2(0.2, 0.2)
+collide_with_areas = true
+
+[node name="TopTrigger" type="Area2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopTrigger"]
+position = Vector2(0, -24.5)
+shape = SubResource("RectangleShape2D_b2n3d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_4ni4e")

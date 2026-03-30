@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://nlu3eoecquwv"]
+
+[ext_resource type="Texture2D" uid="uid://cj4owpcptmr3h" path="res://assets/Cave/caution bumper.png" id="1_02phi"]
+[ext_resource type="Script" uid="uid://cwwfxpghig7ru" path="res://scripts/caution_bumper.gd" id="1_soapq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_soapq"]
+atlas = ExtResource("1_02phi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5df1e"]
+atlas = ExtResource("1_02phi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3my2"]
+atlas = ExtResource("1_02phi")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jvowk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soapq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5df1e")
+}],
+"loop": true,
+"name": &"activate",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3my2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="CautionBumper" type="Node2D"]
+script = ExtResource("1_soapq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jvowk")
+animation = &"activate"
+autoplay = "idle"
+frame_progress = 0.82878476

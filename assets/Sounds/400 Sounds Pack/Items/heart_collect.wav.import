@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://rbp5mj87gfso"
+path="res://.godot/imported/heart_collect.wav-71ebe945ef5dea1970e23752d4b07f8b.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/400 Sounds Pack/Items/heart_collect.wav"
+dest_files=["res://.godot/imported/heart_collect.wav-71ebe945ef5dea1970e23752d4b07f8b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

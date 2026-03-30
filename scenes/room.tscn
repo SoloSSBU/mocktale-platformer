@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=3 uid="uid://dg6b7n0cgocvr"]
+
+[ext_resource type="Script" uid="uid://dgfwuj1f40lak" path="res://scripts/testscene.gd" id="1_612pj"]
+[ext_resource type="PackedScene" uid="uid://dpcqp1pir3e6t" path="res://scenes/Player.tscn" id="1_jotil"]
+[ext_resource type="Script" uid="uid://cpcg3nugl8nmp" path="res://scripts/death_plane.gd" id="3_asog6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jotil"]
+size = Vector2(244.03406, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44gc5"]
+size = Vector2(426, 38)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_612pj")
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("1_jotil")]
+position = Vector2(1, -13)
+
+[node name="Death plane" type="Area2D" parent="." groups=["death_planes"]]
+position = Vector2(-851, -19)
+scale = Vector2(1, 0.92)
+script = ExtResource("3_asog6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death plane"]
+position = Vector2(49.50003, 171)
+scale = Vector2(18.43715, 4.495493)
+shape = SubResource("RectangleShape2D_jotil")
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(0, -16.000002)
+scale = Vector2(1, 0.9375)
+
+[node name="Platforms" type="StaticBody2D" parent="."]
+collision_layer = 3
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Platforms"]
+position = Vector2(449, -613)
+scale = Vector2(0.18387818, 7.925844)
+shape = SubResource("RectangleShape2D_44gc5")
+debug_color = Color(1.6364455e-06, 0.60393125, 0.67880565, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="Platforms/CollisionShape2D4"]
+offset_left = -213.0
+offset_top = -19.0
+offset_right = 213.0
+offset_bottom = 19.0
+color = Color(0, 0.28235295, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Platforms"]
+position = Vector2(229.00003, -345)
+scale = Vector2(0.18387818, 7.925844)
+shape = SubResource("RectangleShape2D_44gc5")
+debug_color = Color(1.6364455e-06, 0.60393125, 0.67880565, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="Platforms/CollisionShape2D3"]
+offset_left = -213.0
+offset_top = -19.0
+offset_right = 213.0
+offset_bottom = 19.0
+color = Color(0, 0.28235295, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platforms"]
+position = Vector2(455.00003, -151.00002)
+scale = Vector2(0.18387818, 7.925844)
+shape = SubResource("RectangleShape2D_44gc5")
+debug_color = Color(1.6364455e-06, 0.60393125, 0.67880565, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="Platforms/CollisionShape2D2"]
+offset_left = -213.0
+offset_top = -19.0
+offset_right = 213.0
+offset_bottom = 19.0
+color = Color(0, 0.28235295, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms"]
+position = Vector2(23.999998, 127)
+scale = Vector2(2.379057, 6.816718)
+shape = SubResource("RectangleShape2D_44gc5")
+debug_color = Color(1.6364455e-06, 0.60393125, 0.67880565, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="Platforms/CollisionShape2D"]
+offset_left = -213.0
+offset_top = -19.0
+offset_right = 213.0
+offset_bottom = 19.0
+color = Color(0, 0.28235295, 1, 1)
+metadata/_edit_use_anchors_ = true

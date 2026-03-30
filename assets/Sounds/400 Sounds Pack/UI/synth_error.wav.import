@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cpsllkvc0ku7s"
+path="res://.godot/imported/synth_error.wav-1ff24e8ed7f6dba187ee6f130979c8d1.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/400 Sounds Pack/UI/synth_error.wav"
+dest_files=["res://.godot/imported/synth_error.wav-1ff24e8ed7f6dba187ee6f130979c8d1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

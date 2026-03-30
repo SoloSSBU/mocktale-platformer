@@ -1,0 +1,130 @@
+[gd_scene load_steps=3 format=3 uid="uid://d7tlfnku8aex"]
+
+[ext_resource type="Script" uid="uid://clvrjqnnktek8" path="res://scripts/pause_menu.gd" id="1_hdmo1"]
+[ext_resource type="Script" uid="uid://bw1v2tj3rppcs" path="res://scripts/option_button.gd" id="2_nwcfo"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 10
+scale = Vector2(0.28, 0.28)
+transform = Transform2D(0.28, 0, 0, 0.28, 0, 0)
+script = ExtResource("1_hdmo1")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(300, 200)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+offset_right = 832.0
+offset_bottom = 468.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 457.68005
+offset_top = 89.10272
+offset_right = 544.68207
+offset_bottom = 260.10275
+scale = Vector2(2.607, 2.797)
+alignment = 1
+
+[node name="Continue" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+
+[node name="Retry" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Retry"
+
+[node name="Settings" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="ExitGame" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Exit Game"
+
+[node name="OptionButton" type="OptionButton" parent="Panel/VBoxContainer"]
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "Cave"
+popup/item_0/id = 0
+popup/item_1/text = "Snow"
+popup/item_1/id = 1
+popup/item_2/text = "Lava"
+popup/item_2/id = 2
+popup/item_3/text = "Sand"
+popup/item_3/id = 3
+script = ExtResource("2_nwcfo")
+
+[node name="SettingsPanel" type="Panel" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanel"]
+layout_mode = 0
+offset_right = 112.0
+offset_bottom = 311.0
+scale = Vector2(2.585, 2.06)
+alignment = 1
+
+[node name="JumpButton" type="Button" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+text = "Jump"
+metadata/bind_name = "jump"
+
+[node name="MoveLeftButton" type="Button" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+text = "Left"
+metadata/bind_name = "move_left"
+
+[node name="MoveRightButton" type="Button" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+text = "Right"
+metadata/bind_name = "move_right"
+
+[node name="DashButton" type="Button" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+text = "Dash"
+metadata/bind_name = "dash"
+
+[node name="UpButton" type="Button" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+text = "Up"
+metadata/bind_name = "ui_up"
+
+[node name="DownButton" type="Button" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+text = "Down"
+metadata/bind_name = "ui_down"
+
+[node name="ClimbButton" type="Button" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+text = "Climb"
+metadata/bind_name = "climb"
+
+[node name="BackButton" type="Button" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[node name="ResetButton" type="Button" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+text = "Reset Default"
+
+[node name="Jsquad" type="CheckButton" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 1016.0
+offset_top = 16.0
+offset_right = 1128.0
+offset_bottom = 47.0
+text = "Jsquad"
+
+[node name="TouchControlsCheck" type="CheckButton" parent="SettingsPanel"]
+layout_mode = 0
+offset_left = 957.1433
+offset_top = 57.142883
+offset_right = 1128.5718
+offset_bottom = 88.14288
+text = "Disable Mobile"

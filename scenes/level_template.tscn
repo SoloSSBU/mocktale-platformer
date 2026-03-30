@@ -1,0 +1,93 @@
+[gd_scene load_steps=19 format=3 uid="uid://crkwtfbn1lggu"]
+
+[ext_resource type="Script" uid="uid://dgfwuj1f40lak" path="res://scripts/testscene.gd" id="1_lgb4l"]
+[ext_resource type="PackedScene" uid="uid://dpcqp1pir3e6t" path="res://scenes/Player.tscn" id="2_7nru8"]
+[ext_resource type="Script" uid="uid://cpcg3nugl8nmp" path="res://scripts/death_plane.gd" id="3_e8ss8"]
+[ext_resource type="Texture2D" uid="uid://cuasaycsol16d" path="res://assets/sand/Pillar.PNG" id="4_ge84i"]
+[ext_resource type="Texture2D" uid="uid://4npfva7j6riq" path="res://assets/Basics/white_tile16.png" id="5_3ea23"]
+[ext_resource type="Texture2D" uid="uid://f082o50fbbw8" path="res://assets/sand/Sand1.PNG" id="6_bpy52"]
+[ext_resource type="Texture2D" uid="uid://da62csj6xvi1a" path="res://assets/sand/Sand2.PNG" id="7_eadi4"]
+[ext_resource type="Texture2D" uid="uid://btbbqv23x8ifs" path="res://assets/sand/Sand3.PNG" id="8_7omcp"]
+[ext_resource type="Script" uid="uid://so080uw7jmcp" path="res://scripts/roomlines.gd" id="9_7nru8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpfra"]
+size = Vector2(244.03406, 20)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bqexd"]
+texture = ExtResource("4_ge84i")
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dor5v"]
+texture = ExtResource("5_3ea23")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xknu3"]
+texture = ExtResource("6_bpy52")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wjhds"]
+texture = ExtResource("7_eadi4")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h01qx"]
+texture = ExtResource("8_7omcp")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_dor5v"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_dor5v")
+sources/0 = SubResource("TileSetAtlasSource_bqexd")
+sources/2 = SubResource("TileSetAtlasSource_xknu3")
+sources/3 = SubResource("TileSetAtlasSource_wjhds")
+sources/4 = SubResource("TileSetAtlasSource_h01qx")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o6y4f"]
+texture = ExtResource("5_3ea23")
+0:0/0 = 0
+0:0/0/modulate = Color(0, 0, 0, 1)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_3inn0"]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_o6y4f")
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_lgb4l")
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_7nru8")]
+position = Vector2(15, -75)
+collision_mask = 3
+
+[node name="Death plane" type="Area2D" parent="." groups=["death_planes"]]
+position = Vector2(-834, -77.625)
+scale = Vector2(1, 0.92)
+script = ExtResource("3_e8ss8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death plane"]
+position = Vector2(49.50003, 171)
+scale = Vector2(18.43715, 4.495493)
+shape = SubResource("RectangleShape2D_kpfra")
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(17, -74.625)
+scale = Vector2(1, 0.9375)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Solid" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_dor5v")
+
+[node name="Hazards" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_3inn0")
+
+[node name="RoomGrid" type="Node2D" parent="."]
+script = ExtResource("9_7nru8")
+line_color = Color(1, 1, 1, 0.34117648)

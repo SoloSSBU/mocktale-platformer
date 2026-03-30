@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://ct5lvp6lusvxl"]
+
+[ext_resource type="Texture2D" uid="uid://bq3o5qkegjt7k" path="res://assets/Characters/extras/dash blast.png" id="1_u5kyj"]
+[ext_resource type="Script" uid="uid://c26gp0woc11a5" path="res://scripts/explosion_root.gd" id="1_x5fg6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbufk"]
+atlas = ExtResource("1_u5kyj")
+region = Rect2(0, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vf6i"]
+atlas = ExtResource("1_u5kyj")
+region = Rect2(72, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j46ui"]
+atlas = ExtResource("1_u5kyj")
+region = Rect2(0, 72, 72, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mmpr6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbufk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vf6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j46ui")
+}],
+"loop": false,
+"name": &"dash_explosion",
+"speed": 10.0
+}]
+
+[node name="ExplosionRoot" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2
+sprite_frames = SubResource("SpriteFrames_mmpr6")
+animation = &"dash_explosion"
+autoplay = "dash_explosion"
+script = ExtResource("1_x5fg6")

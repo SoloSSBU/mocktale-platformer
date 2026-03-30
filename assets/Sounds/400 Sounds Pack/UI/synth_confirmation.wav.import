@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://db5qs33frp2h1"
+path="res://.godot/imported/synth_confirmation.wav-a15ec0046fc3a3b91ef2c8fdf25631ed.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/400 Sounds Pack/UI/synth_confirmation.wav"
+dest_files=["res://.godot/imported/synth_confirmation.wav-a15ec0046fc3a3b91ef2c8fdf25631ed.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

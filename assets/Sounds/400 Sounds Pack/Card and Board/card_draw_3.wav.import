@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d36dc1xht7t3c"
+path="res://.godot/imported/card_draw_3.wav-2b52d1648b6ae6cc526cdfb3d0dca122.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/400 Sounds Pack/Card and Board/card_draw_3.wav"
+dest_files=["res://.godot/imported/card_draw_3.wav-2b52d1648b6ae6cc526cdfb3d0dca122.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
