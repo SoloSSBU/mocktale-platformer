@@ -1,29 +1,19 @@
 # Mocktale
-
-2D precision platformer built using Godot and GDScript, focused on responsive movement and tight gameplay mechanics.
-
-## Features
-- Custom character controller
-- Dash mechanics and wall climbing
-- Corner correction for smooth platforming
-- Moving platforms and environmental hazards
-- Room-based level transitions
-
-## Tech Stack
-- Godot Engine
-- GDScript
+**2D precision platformer built with Godot & GDScript**
 
 ## Gameplay
+Experience tight movement and platforming mechanics:
+
 ![Gameplay](media/mocktalegif.gif)
 
-## Play the Game
-https://solossbu.itch.io/mocktale
+**Highlights:**
+- Dash, climb, wall jump, and corner correction
+- Room-based level transitions
+- Responsive, polished controls
+- Original sprites, tiles, and animations
 
-## Code Overview
-The project is structured into modular systems:
-- `scripts/` – gameplay logic and mechanics
-- `scenes/` – reusable game objects and levels
-- `assets/` – sprites and visual resources
+## Play & Code
+- Play the game: [solossbu.itch.io/mocktale](https://solossbu.itch.io/mocktale)  
 
 ## Author
 Ryan Solan
